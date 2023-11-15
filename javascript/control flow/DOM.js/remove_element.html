@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asdfghjkl</title>
+</head>
+<body style="background-color: black; color: rgb(229, 241, 241);">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage (LangName){
+        const li = document.createElement ('li');
+        li.innerHTML = `${LangName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptilanguage (LangName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(LangName))
+        document.querySelector('.language').appendChild (li)
+    }
+    addOptilanguage ('golang');
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    const newli= document.createElement("li")
+    newli.textContent = "ruby"
+    thirdLang.replaceWith(newli);
+
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li> typescript </li>'
+
+    //remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
